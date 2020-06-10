@@ -6,7 +6,6 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - docker login --username nagendrakalva --password-stdin
       - REPOSITORY_URI=https://hub.docker.com/repository/docker/nagendrakalva/node-app
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
